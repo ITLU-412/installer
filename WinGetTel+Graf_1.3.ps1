@@ -137,17 +137,7 @@ $installButton.Add_Click({
                 Start-Process "powershell" -ArgumentList "-Command", $command -NoNewWindow -Wait -ErrorAction Stop
                 Write-Host "Sikeresen telepítve: $command" -ForegroundColor Green
 
-                # Speciális eset: fájl másolása a WinRAR telepítése után
-                if ($command -like "*RARLab.WinRAR*") {
-                    try {
-                        $sourcePath = "D:\3. Programok\WinRaR\HUN\rarreg.key"  # Forrásfájl elérési útja, Stabuil elérési uttal 
-                        $destinationPath = "C:\Program Files\WinRAR\"  # Célmappa elérési útja
-                        Copy-Item -Path $sourcePath -Destination $destinationPath -Force
-                        Write-Host "Fájl sikeresen másolva: $sourcePath a $destinationPath helyre" -ForegroundColor Green
-                    } catch {
-                        Write-Host "Hiba történt a fájl másolása közben: $_" -ForegroundColor Red
-                    }
-                }
+                
                 # Speciális eset: következő fájl másolása ****** telepítése után
 
             } catch {
