@@ -137,8 +137,6 @@ $installButton.Add_Click({
                 Start-Process "powershell" -ArgumentList "-Command", $command -NoNewWindow -Wait -ErrorAction Stop
                 Write-Host "Sikeresen telepítve: $command" -ForegroundColor Green
 
-                
-                # Speciális eset: következő fájl másolása ****** telepítése után
 
             } catch {
                 # Hibakezelés a konzolban
